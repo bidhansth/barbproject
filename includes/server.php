@@ -42,7 +42,7 @@ if (isset($_POST['register'])) {
 		$_SESSION['success'] = "You have logged in";
 		// Page on which the user will be
 		// redirected after logging in
-		header('location: index.php');
+		header('location: login.php');
 	}
 }
 // User login
@@ -67,13 +67,15 @@ if (isset($_POST['login'])) {
 		if (mysqli_num_rows($results) == 1) {
 			$row = mysqli_fetch_array($results);
 			$mname=$row['mname'];
+			$email=$row['email'];
 			// Storing username in session variable
 			$_SESSION['mname'] = $mname;
 			$_SESSION['phone'] = $phone;
+			$_SESSION['email'] = $email;
 			// Welcome message
 			$_SESSION['success'] = "You have logged in!";
 			// Page on which the user is sent to after logging in
-			header('location: index.php');
+			header('location: members.php');
 		}
 		else {
 			// If the username and password doesn't match
@@ -86,6 +88,45 @@ if (isset($_GET['logout'])){
     session_destroy();
     unset($_SESSION['mname']);
     unset($_SESSION['phone']);
+    unset($_SESSION['email']);
     header("location: index.php");
 }
+
+//booking code
+if (isset($_POST['booking'])) {
+	$mname=$_POST['mname'];
+	$phone=$_POST['phone'];
+	$email=$_POST['email'];
+	$sdate=$_POST['sdate'];
+	$vehicle=$_POST['vehicle'];
+	$vehiclenum=$_POST['vehiclenum'];
+	$dtime=$_POST['dtime'];
+	$vehicleother=$_POST['vehicleother'];
+	$sreq=$_POST['sreq'];
+	$services=implode(",",$sreq);
+	$comments=$_POST['comments'];
+
+	$checkunique=mysqli_query($db,"SELECT * FROM bookings where sdate='$sdate' AND dtime='$dtime'");
+    if(mysqli_num_rows($checkunique)>0){
+		$timeslot="Time Slot taken. Please book at a different time";
+    }
+    else{
+	$inss="INSERT INTO bookings(mname,phone,email,sdate,dtime,vehicle,vehiclenum,services,comments) VALUES('$mname','$phone','$email','$sdate','$dtime','$vehicle','$vehiclenum','$services','$comments')";
+		mysqli_query($db,$inss);
+		header("Location:booked.php"); 
+	}
+}
+
+//admin panel code
+if (isset($_POST['servicecompleted'])) {
+	$compbid=$_POST['compbid'];
+	mysqli_query($db,"INSERT INTO archive SELECT * from bookings where bid=$compbid;");
+	mysqli_query($db,"DELETE FROM bookings WHERE bid=$compbid;");
+}
+
+if (isset($_POST['servicecancelled'])) {
+	$compbid=$_POST['delbid'];
+	mysqli_query($db,"DELETE FROM bookings WHERE bid=$compbid;");
+}
+
 ?>

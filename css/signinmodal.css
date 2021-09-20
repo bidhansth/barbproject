@@ -10,7 +10,7 @@ input[type=text],input[type=password],input[type=email],input[type=date], select
 
 /* Set a style for all buttons */
 .barbbutton {
-  background-color: #19659f;
+  background-color:#047a94;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;

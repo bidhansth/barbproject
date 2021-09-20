@@ -20,9 +20,9 @@
   <?php include('includes/navbar.php');?>
 
   <div class="container">
-    <h2>Make a Booking</h2>
-    <form method="post" action="includes/book.php">
-      <div class="row">
+    <h2>Make a Booking</h2><br>
+    <form method="post">
+      <div class="row" style="display: none;">
         <div class="col-sm-4">
           <label for="mname"><b>Name</b></label>
           <input type="text" name="mname" value="<?php echo $_SESSION['mname'] ?>" required>
@@ -32,24 +32,37 @@
         </div>
         <div class="col-sm-4">
           <label for="email"><b>Email</b></label>
-          <input type="email" placeholder="Enter Email Address" name="email" required>
+          <input type="email" placeholder="Enter Email Address" name="email" value="<?php echo $_SESSION['email'] ?>" required>
         </div>
       </div>
-      <hr>
       <div class="row">
         <div class="col-sm-4 search-box">
           <label for="sdate"><b>Servicing Date</b></label>
           <input type="date" name="sdate" required>
-          <br>
+          <p>&nbsp;</p>
           <label for="vehicle"><b>Vehicle</b></label>
           <input type="text" autocomplete="off" placeholder="Search vehicles..." style="margin-bottom: 2px;" name="vehicle">
           <div class="result"></div>
           <br>
+          <label for="vehiclenum"><b>Vehicle Number</b></label>
+          <input type="text" name="vehiclenum" placeholder="eg: Ba 69 Pa 4020" required>
+          <br>
         </div>
         <div class="col-sm-4">
           <label for="dtime"><b>Drop-off Time</b></label>
-          <input type="time" name="dtime">
-          <br>
+          <select name="dtime" id="dtime">
+            <option value="9">9 AM</option>
+            <option value="10">10 AM</option>
+            <option value="11">11 AM</option>
+            <option value="12">12 PM</option>
+            <option value="1">1 PM</option>
+            <option value="2">2 PM</option>
+            <option value="3">3 PM</option>
+            <option value="4">4 PM</option>
+            <option value="5">5 PM</option>
+            <option value="6">6 PM</option>
+          </select>
+          <p class="text-danger"><?php if(isset($timeslot)) echo $timeslot; ?>&nbsp;</p>
           <label for="vehicleother"><b>Vehicle (Other)</b></label>
           <input type="text" placeholder="Enter vehicle here if not available on the list" name="vehicleother">
         </div>
