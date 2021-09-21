@@ -3,13 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/ajitcss.css">
+  <link rel="stylesheet" href="css/indexcss.css">
   <!-- Fontawesome CDN Link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-  <title>Service Nepal</title>
+  <title>Service Nepal.</title>
+  <?php include('includes/server.php');?>
 </head>
 <body>
-<?php include('includes/barbnav.php') ?>
+<nav>
+  <div class="navbar">
+    <div class="logo"><a href="#">Service Nepal.</a></div>
+    <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#skills">Pricings</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <?php
+          if(!isset($_SESSION['mname'])){
+            ?>
+            <li><a href="" onclick="alert('Please Log In to view your bookings.'); return false;">My Bookings</a></li>
+            <?php
+          }
+          if(isset($_SESSION['mname'])){
+            ?>
+            <li><a href="members.php">My Bookings</a></li>
+            <li><a><i class="far fa-user"></i>&nbsp;<?php echo $_SESSION['mname']; ?></a></li>
+            <?php
+          }
+        ?>
+        
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+    </ul>
+    <div class="media-icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="menu-btn">
+    <i class="fas fa-bars"></i>
+  </div>
+</nav>
 
 <!-- Home Section Start -->
 <section class="home" id="home">
@@ -21,8 +58,18 @@
       <div class="text-four">Vehicle servicing made easier than ever with online booking and payment.</div>
     </div>
     <div class="button">
-      <a href="login.php"><button style="margin: 5px">Login</button></a>
-      <a href="login.php"><button style="margin: 20px">Register</button></a>
+      <?php
+        if(isset($_SESSION['mname'])){
+          ?>
+          <a href="booking.php"><button style="margin: 5px">Make a Booking</button></a>
+          <?php
+        }
+        if(!isset($_SESSION['mname'])){
+          ?>
+              <a href="login.php"><button style="margin: 5px">Login / Register</button></a>
+              <?php
+        }
+      ?>
     </div>
   </div>
 </section>
@@ -33,13 +80,13 @@
     <div class="title"><span>About Us</span></div>
     <div class="about-details">
       <div class="left">
-        <img src="images/about.jpg" alt="">
+        <img src="img/index_about.jpg">
       </div>
       <div class="right">
         <div class="topic">Servicing your vehicle since 2019</div>
         <p>Service Nepal offers complete auto care for your vehicle. Whether it’s time for your next factory recommended maintenance visit, a routine oil change, new tires, or repair services on your brakes, muffler and exhaust, suspension, air conditioner, or any other mechanical or electrical component of your car, Service Nepal is in your neighborhood and ready to serve you. Service Nepal offers complete auto care for your vehicle. Whether it’s time for your next factory recommended maintenance visit, a routine oil change, new tires, or repair services on your brakes, muffler and exhaust, suspension, air conditioner, or any other mechanical or electrical component of your car, Service Nepal is in your neighborhood and ready to serve you. Service Nepal offers complete auto care for your vehicle. Whether it’s time for your next factory recommended maintenance visit, a routine oil change, new tires, or repair services on your brakes, muffler and exhaust, suspension, air conditioner, or any other mechanical or electrical component of your car, Service Nepal is in your neighborhood and ready to serve you. Service Nepal offers complete auto care for your vehicle. Whether it’s time for your next factory recommended maintenance visit, a routine oil change, new tires, or repair services on your brakes, muffler and exhaust, suspension, air conditioner, or any other mechanical or electrical component of your car, Service Nepal is in your neighborhood and ready to serve you.</p>
         <div class="button icon"> 
-          <a href="https://www.google.com/maps/place/Nepal+College+of+Information+Technology/@27.6713817,85.3365496,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb19e8af4a5fe3:0x963d00cdf478c6b6!8m2!3d27.6713817!4d85.3387383" target="_blank"><button><i class="fas fa-map-marker-alt"></i>Find Us</button></a>
+          <a href="https://www.google.com/maps/place/Nepal+College+of+Information+Technology/@27.6713817,85.3365496,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb19e8af4a5fe3:0x963d00cdf478c6b6!8m2!3d27.6713817!4d85.3387383" target="_blank"><button><i class="fas fa-map-marker-alt"></i>&nbsp;Find Us</button></a>
         </div>
       </div>
     </div>
@@ -61,7 +108,7 @@
       </div>
       <div class="boxes">
         <div class="box">
-          <div class="topic">Half Servicing</div>
+          <div class="topic">Basic Servicing</div>
           <div class="per">Rs.1000</div>
         </div>
         <div class="box">

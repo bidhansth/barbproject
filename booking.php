@@ -5,12 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <title>Chelsea Auto Services</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <title>Service Nepal.</title>
   <script src="https://kit.fontawesome.com/57c187a429.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/signinmodal.css">
   <link rel="stylesheet" href="css/barbcss.css">
-  <link rel="stylesheet" href="css/bookingcss.css">
   <?php include('includes/server.php');?>
   <?php include('includes/errors.php');?>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -71,10 +69,12 @@
       <div class="row">
         <div class="col-sm-4">
           <b>Services Required</b><br>
-          <input type="checkbox" name="sreq[]" value="Engine Oil Change"> Engine Oil Change<br>
+          <input type="checkbox" name="sreq[]" value="Full Servicing"> Full Servicing<br>
+          <input type="checkbox" name="sreq[]" value="Basic Servicing"> Basic Servicing<br>
           <input type="checkbox" name="sreq[]" value="Front Brake"> Front Brake<br>
           <input type="checkbox" name="sreq[]" value="Rear Brake"> Rear Brake<br>
-          <input type="checkbox" name="sreq[]" value="Full Servicing"> Full Servicing<br>
+          <input type="checkbox" name="sreq[]" value="Full Wash"> Full Wash<br>
+          <input type="checkbox" name="sreq[]" value="Half Wash"> Half Wash<br>
         </div>
         <div class="col-sm-4">
           <label for="comments"><b>Comments</b></label>
@@ -91,22 +91,6 @@
   </div>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-  <script>
-  // Get the modal
-  var modal = document.getElementById('id01');
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  }
-  function toggleOne(onId, offId) {
-    var turnOn = document.getElementById(onId);
-    var turnOff = document.getElementById(offId);
-    turnOn.style.display = 'block';
-    turnOff.style.display = 'none';
-  }
-  </script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

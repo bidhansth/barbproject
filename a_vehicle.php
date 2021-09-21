@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>Add Item</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="css/barbcss.css">
 </head>
 <body>
 <div class="header">

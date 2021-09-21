@@ -1,4 +1,8 @@
 <?php
+//Import PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
 // Starting the session, necessary for using session variables
 session_start();
 
@@ -42,7 +46,7 @@ if (isset($_POST['register'])) {
 		$_SESSION['success'] = "You have logged in";
 		// Page on which the user will be
 		// redirected after logging in
-		header('location: login.php');
+		header('location: members.php');
 	}
 }
 // User login
@@ -85,10 +89,10 @@ if (isset($_POST['login'])) {
 }
 // logout code
 if (isset($_GET['logout'])){
-    session_destroy();
     unset($_SESSION['mname']);
     unset($_SESSION['phone']);
     unset($_SESSION['email']);
+    session_destroy();
     header("location: index.php");
 }
 
@@ -120,8 +124,14 @@ if (isset($_POST['booking'])) {
 //admin panel code
 if (isset($_POST['servicecompleted'])) {
 	$compbid=$_POST['compbid'];
+   	$retval=mysqli_query($db,"SELECT * FROM bookings WHERE bid='$compbid'");   
+   	$row=mysqli_fetch_array($retval, MYSQLI_ASSOC);
+    $compmname=$row['mname'];
+    $compemail=$row['email'];
 	mysqli_query($db,"INSERT INTO archive SELECT * from bookings where bid=$compbid;");
 	mysqli_query($db,"DELETE FROM bookings WHERE bid=$compbid;");
+	include('mailer.php');
+
 }
 
 if (isset($_POST['servicecancelled'])) {

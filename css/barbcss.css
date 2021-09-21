@@ -1,3 +1,20 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+.navbar-brand{
+  margin-left:60px;
+  font-weight:500;
+  font-size: 36px;
+  padding:0;
+  font-family:Ubuntu;
+}
+
 .barbalert{
   width: 30%;
   margin-left: -15%;
@@ -16,9 +33,9 @@
 }
 
 .nav-item{
-  padding: 0 22px;
+  padding: 6px 0;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .b-item{
   font-size: 24px;
@@ -73,4 +90,59 @@
 }
 .result p:hover{
   background: #f2f2f2;
+}
+
+/* Full-width input fields */
+input[type=text],input[type=password],input[type=email],input[type=date], select, textarea,input[type=time]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.barbbutton {
+  background-color:#047a94;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.barbbutton:hover {
+  opacity: 0.8;
+}
+
+.lgbutton{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
 }
