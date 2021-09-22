@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2021 at 09:23 AM
+-- Generation Time: Sep 22, 2021 at 07:54 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -60,7 +60,7 @@ CREATE TABLE `bookings` (
   `phone` double NOT NULL,
   `email` varchar(50) NOT NULL,
   `sdate` date NOT NULL,
-  `dtime` tinyint(4) NOT NULL,
+  `dtime` varchar(5) NOT NULL,
   `vehicle` varchar(50) NOT NULL,
   `vehiclenum` varchar(15) NOT NULL,
   `services` text NOT NULL,
@@ -72,8 +72,8 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`) VALUES
-(25, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-22', 10, 'yamaha fz', '1212', 'Full Servicing', ''),
-(27, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-24', 9, 'yamaha fz', '122', 'Full Servicing', '');
+(29, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', '9 AM', 'Hyundai i10', 'ASD AD', 'Full Servicing', 'SD'),
+(30, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', '5 PM', 'hyundai santa fe', 'ASD AD', 'Full Servicing', 'SD');
 
 -- --------------------------------------------------------
 
@@ -87,6 +87,13 @@ CREATE TABLE `employees` (
   `ephone` double NOT NULL,
   `epassword` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`eid`, `ename`, `ephone`, `epassword`) VALUES
+(2, 'Ritika Karanjit', 1234567890, '12345');
 
 -- --------------------------------------------------------
 
@@ -127,16 +134,42 @@ CREATE TABLE `vehicles` (
 --
 
 INSERT INTO `vehicles` (`vid`, `vmake`, `vmodel`) VALUES
-(1, 'yamaha', 'fz'),
-(2, 'yamaha', 'r15'),
-(3, 'yamaha', 'mt 15'),
-(4, 'honda', 'civic'),
-(5, 'honda', 'xr 150'),
-(6, 'husqvarna', 'vitpilen'),
-(7, 'husqvarna', 'svartpilen'),
-(8, 'hyundai', 'creta'),
-(9, 'hyundai', 'santa fe'),
-(10, 'hyundai', 'i20');
+(1, 'Yamaha', 'FZ'),
+(2, 'Yamaha', 'R15'),
+(3, 'Yamaha', 'MT 15'),
+(4, 'Honda', 'Civic'),
+(5, 'Honda', 'XR 150'),
+(6, 'Husqvarna', 'Vitpilen'),
+(7, 'Husqvarna', 'Svartpilen'),
+(8, 'Hyundai', 'Creta'),
+(9, 'Hyundai', 'Santa fe'),
+(20, 'TVS', 'Apache'),
+(21, 'Hyundai', 'i10'),
+(22, 'Hyundai', 'i20'),
+(23, 'Tesla', 'Model X'),
+(24, 'Tesla', 'Model S'),
+(25, 'Tesla', 'Model 3'),
+(26, 'Tesla', 'Model Y'),
+(27, 'Land Rover', 'Discovery'),
+(28, 'Land Rover', 'Evoke'),
+(29, 'Suzuki', 'Gypsy'),
+(30, 'Bajaj', 'Pulsar'),
+(31, 'Hero', 'Splendor'),
+(32, 'Hero', 'Xpulse'),
+(33, 'Bajaj', 'Platina'),
+(34, 'Suzuki', 'Gixxer'),
+(35, 'Royal Enfield', 'Classic'),
+(36, 'Royal Enfield', 'Himalayan'),
+(37, 'Royal Enfield', 'Thunderbird'),
+(38, 'Honda', 'Unicorn'),
+(39, 'Honda', 'Aviator'),
+(40, 'Honda', 'Pleasure'),
+(41, 'Yamaha', 'RayZR'),
+(42, 'Aprilia', 'SR 150'),
+(43, 'Vespa', 'SXL'),
+(44, 'Vespa', 'VXL'),
+(45, 'Honda', 'Dio'),
+(46, 'Honda', 'Grazia');
 
 --
 -- Indexes for dumped tables
@@ -180,13 +213,13 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `members`
@@ -198,7 +231,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `vid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `vid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

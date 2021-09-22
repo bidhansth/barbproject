@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/barbcss.css" rel="stylesheet">
   <title>View Bookings</title>
   <script src="https://kit.fontawesome.com/57c187a429.js" crossorigin="anonymous"></script>
   <?php include('includes/server.php');?>
@@ -21,6 +22,7 @@
   </style>
 </head>
 <body>
+  <?php include('includes/adminnavbar.php'); ?>
   <div class="container-fluid">
     <div class="row" style="margin: 15px;">
       <table class="table table-striped table-bordered">
@@ -42,20 +44,20 @@
     </div>
   </div>
   <div class="footer">
-    <div class="row" style="margin: 15px;">
-      <div class="col-sm-3">
+    <div class="row justify-content-center" style="margin: 15px;">
+      <div class="col-sm-2">
         Service Completed<br>
         <form method="post">
-          Booking Id: <input type="text" name="compbid" size="3"><br>
-          <input type="submit" name="servicecompleted">
+          Booking Id: <input type="text" name="compbid" style="width:40%;"><br>
+          <input type="submit" class="btn barbbutton" name="servicecompleted">
         </form>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-sm-2">
         Booking Cancelled<br>
         <form method="post">
-          Booking Id: <input type="text" name="delbid" size="3"><br>
-          <input type="submit" name="servicecancelled">
+          Booking Id: <input type="text" name="delbid" style="width:40%;"><br>
+          <input type="submit" class="btn barbbutton" name="servicecancelled">
         </form>
       </div>
     </div>

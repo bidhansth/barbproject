@@ -10,7 +10,7 @@
 .navbar-brand{
   margin-left:60px;
   font-weight:500;
-  font-size: 36px;
+  font-size: 36px!important;
   padding:0;
   font-family:Ubuntu;
 }
@@ -145,4 +145,20 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #047a94;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #047a94;
 }

@@ -84,9 +84,9 @@
       </div>
       <div class="right">
         <div class="topic">Servicing your vehicle since 2019</div>
-        <p>Service Nepal offers complete auto care for your vehicle. Whether it’s time for your next factory recommended maintenance visit, a routine oil change, new tires, or repair services on your brakes, muffler and exhaust, suspension, air conditioner, or any other mechanical or electrical component of your car, Service Nepal is in your neighborhood and ready to serve you. Service Nepal offers complete auto care for your vehicle. Whether it’s time for your next factory recommended maintenance visit, a routine oil change, new tires, or repair services on your brakes, muffler and exhaust, suspension, air conditioner, or any other mechanical or electrical component of your car, Service Nepal is in your neighborhood and ready to serve you. Service Nepal offers complete auto care for your vehicle. Whether it’s time for your next factory recommended maintenance visit, a routine oil change, new tires, or repair services on your brakes, muffler and exhaust, suspension, air conditioner, or any other mechanical or electrical component of your car, Service Nepal is in your neighborhood and ready to serve you. Service Nepal offers complete auto care for your vehicle. Whether it’s time for your next factory recommended maintenance visit, a routine oil change, new tires, or repair services on your brakes, muffler and exhaust, suspension, air conditioner, or any other mechanical or electrical component of your car, Service Nepal is in your neighborhood and ready to serve you.</p>
+        <p>Service Nepal offers complete auto care for your vehicle. Whether it’s time for your next factory recommended maintenance visit, a routine oil change, new tires, or repair services on your brakes, muffler and exhaust, suspension, air conditioner, or any other mechanical or electrical component of your car, Service Nepal is in your neighborhood and ready to serve you. We have tailored our services around what our community needs. Service Nepal is an excellent choice for 2 Wheelers, 4 Wheelers, Diesel Trucks, as well as all Domestic Vehicles. We believe in giving you the very best service for auto repair that you can find. That’s why we seek out and hire the very best auto repair technicians. We look for technicians that have strong experience with the brands of vehicles we service. We hire those with ASE Certified and Master Technician certifications that shows they keep current on their training. Experience and expertise translate into the job done right the first time and done quicker. By hiring the right people, we are able to provide one of the best auto services possible. Having your car serviced at the correct intervals using the correct items as recommended by the manufacturer can save you money in the long run. An engine that hasn't been serviced regularly will use more fuel than one that is well-maintained, which means more trips to the pumps. Cheap tyres that are worn are worse in the wet and have a greater braking distance than quality tyres with good tread, which means you're not as safe as you could be. And brakes are the only thing that slow you down, so why would you risk not having them maintained properly?</p>
         <div class="button icon"> 
-          <a href="https://www.google.com/maps/place/Nepal+College+of+Information+Technology/@27.6713817,85.3365496,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb19e8af4a5fe3:0x963d00cdf478c6b6!8m2!3d27.6713817!4d85.3387383" target="_blank"><button><i class="fas fa-map-marker-alt"></i>&nbsp;Find Us</button></a>
+          <a href="https://www.google.com/maps/place/Nepal+College+of+Information+Technology/@27.6713817,85.3365496,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb19e8af4a5fe3:0x963d00cdf478c6b6!8m2!3d27.6713817!4d85.3387383" target="_blank"><button><i class="fas fa-map-marker-alt"></i>&nbsp;Get Directions</button></a>
         </div>
       </div>
     </div>
@@ -99,8 +99,8 @@
     <div class="title"><span>Pricings</span></div>
     <div class="skills-details">
       <div class="text">
-        <div class="topic">We Can Repair Anything.</div>
-        <p>The strongest and most effective force in guaranteeing the long-term maintenance of power is not violence in all the forms deployed by the dominant to control the dominated, but consent in all the forms in which the dominated acquiesce in their own domination.</p>
+        <div class="topic">We speak your car's language</div>
+        <p>Broken things deserve to be repaired. The spider is a repairer. If you bash into the web of a spider, she doesn't get mad. She weaves and repairs it.</p>
         <div class="experience">
           <div class="num">2</div>
           <div class="exp">Years Of <br> Service</div>
@@ -137,7 +137,7 @@
         <div class="icon">
           <i class="fas fa-wrench"></i>
         </div>
-        <div class="topic">Half Servicing</div>
+        <div class="topic">Basic Servicing</div>
         <p></p>
       </div>
       <div class="box">

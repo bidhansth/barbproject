@@ -11,6 +11,15 @@
   <link rel="stylesheet" href="css/barbcss.css">
   <?php include('includes/server.php');?>
   <?php include('includes/errors.php');?>
+  <style type="text/css">
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  } 
+  </style>
 </head>
 <body>
   <?php include('includes/navbar.php');?>
@@ -36,12 +45,41 @@
               echo "0 results";
           }
         ?>
-      </table>
-      </div>
-      <div class="col-sm-2">
-        <a href="booking.php" class="btn barbbutton" >Make A Booking</a>
+        </table>
+        <p>Current Services Booked:</p>
+        <table class="table table-striped table-bordered">
+        <?php
+          $phone=$_SESSION['phone'];
+          $sql = "SELECT * FROM bookings WHERE phone='$phone'";
+          $result = $db->query($sql);
+
+          if ($result->num_rows > 0) {
+              echo "<tr><th>Booking ID</th><th>Name</th><th>Servicing Date</th><th>Drop-off Time</th><th>Vehicle</th><th>Vehicle Number</th><th>Services Required</th><th>Comments</th></tr>";
+              // output data of each row
+              while($row = $result->fetch_assoc()) {
+                  echo "<tr><td>" . $row["bid"]. "</td><td>" . $row["mname"]. "</td><td>" . $row["sdate"] . "</td><td>" . $row["dtime"] . "</td><td>" . $row["vehicle"] . "</td><td>" . $row["vehiclenum"] . "</td><td>" . $row["services"] . "</td><td>" . $row["comments"] . "</td></tr>";
+              }
+          } else {
+              echo "0 results";
+          }
+        ?>
+        </table>
       </div>
     </div>
+
+  <div class="footer">
+    <div class="row justify-content-center align-items-end">
+    <div class="col-sm-2">
+        <a href="booking.php" class="btn barbbutton">Make A Booking</a>
+      </div>
+      <div class="col-sm-2">
+        <form method="post">
+          Enter booking id to cancel:<input type="text" name="ucbid" style="width: 50%">
+          <input type="submit" class="btn barbbutton" name="usercancel" value="Cancel A Booking">
+        </form>
+      </div>
+    </div>
+  </div>
   </div>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

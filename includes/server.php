@@ -131,12 +131,108 @@ if (isset($_POST['servicecompleted'])) {
 	mysqli_query($db,"INSERT INTO archive SELECT * from bookings where bid=$compbid;");
 	mysqli_query($db,"DELETE FROM bookings WHERE bid=$compbid;");
 	include('mailer.php');
-
 }
 
 if (isset($_POST['servicecancelled'])) {
 	$compbid=$_POST['delbid'];
 	mysqli_query($db,"DELETE FROM bookings WHERE bid=$compbid;");
+}
+
+// Employee login
+if(isset($_POST['employeelogin'])) {
+	// Data sanitization to prevent SQL injection
+	$ephone = mysqli_real_escape_string($db, $_POST['ephone']);
+	$epassword = mysqli_real_escape_string($db, $_POST['epassword']);
+	// Error message if the input field is left blank
+	if (empty($ephone)) {
+		array_push($errors, "Phone number is required");
+	}
+	if (empty($epassword)) {
+		array_push($errors, "Password is required");
+	}
+	// Checking for the errors
+	if (count($errors) == 0) {
+		// Password matching
+		$query = "SELECT * FROM employees WHERE ephone='$ephone' AND epassword='$epassword'";
+		$results = mysqli_query($db, $query);
+		// $results = 1 means that one user with the entered username exists
+		if (mysqli_num_rows($results) == 1) {
+			$row = mysqli_fetch_array($results);
+			$ename=$row['ename'];
+			// Storing username in session variable
+			$_SESSION['ename'] = $ename;
+			$_SESSION['ephone'] = $ephone;
+			// Welcome message
+			$_SESSION['success'] = "You have logged in!";
+			// Page on which the user is sent to after logging in
+		}
+		else {
+			// If the username and password doesn't match
+			array_push($errors, "Phone number or password incorrect");
+		}
+	}
+}
+
+//add vehicle
+if(isset($_POST['addvehicle'])) {
+	$vmake=$_POST['vmake'];
+	$vmodel=$_POST['vmodel'];
+	if ((empty($_POST["vmake"]))||(empty($_POST["vmodel"]))){
+		echo "empty";
+	}
+	else{
+		$inss="INSERT INTO vehicles(vmake,vmodel) VALUES('$vmake','$vmodel')";
+		mysqli_query($db,$inss);
+		echo "Vehicle added succesfully";
+	}
+}
+//delete vehicle
+if(isset($_POST['deletevehicle'])) {
+	$vmake=$_POST['vmake'];
+	$vmodel=$_POST['vmodel'];
+	if ((empty($_POST["vmake"]))||(empty($_POST["vmodel"]))){
+		echo "empty";
+	}
+	else{
+		$inss="DELETE FROM vehicles WHERE vmake='$vmake' AND vmodel='$vmodel'";
+		mysqli_query($db,$inss);
+		echo "Vehicle deleted succesfully";
+	}
+}
+
+//add employee
+if(isset($_POST['addemployee'])) {
+	$ename=$_POST['ename'];
+	$ephone=$_POST['ephone'];
+	$epassword=$_POST['epassword'];
+	if ((empty($_POST["ename"]))||(empty($_POST["ephone"]))||(empty($_POST["epassword"]))){
+		echo "empty";
+	}
+	else{
+		$inss="INSERT INTO employees(ename,ephone,epassword) VALUES('$ename','$ephone','$epassword')";
+		mysqli_query($db,$inss);
+		echo "Employee added succesfully";
+	}
+}
+//delete employee
+if(isset($_POST['deleteemployee'])) {
+	$ename=$_POST['ename'];
+	$ephone=$_POST['ephone'];
+	if ((empty($_POST["ename"]))||(empty($_POST["ephone"]))){
+		echo "empty";
+	}
+	else{
+		$inss="DELETE FROM employees WHERE ename='$ename' AND ephone='$ephone'";
+		mysqli_query($db,$inss);
+		echo "Employee deleted succesfully";
+	}
+}
+
+//user cancel code
+if(isset($_POST['usercancel'])){
+	$ucbid=$_POST['ucbid'];
+	$phone=$_SESSION['phone'];
+	mysqli_query($db,"DELETE FROM bookings WHERE bid='$ucbid' AND phone='$phone'");
 }
 
 ?>

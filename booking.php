@@ -49,16 +49,16 @@
         <div class="col-sm-4">
           <label for="dtime"><b>Drop-off Time</b></label>
           <select name="dtime" id="dtime">
-            <option value="9">9 AM</option>
-            <option value="10">10 AM</option>
-            <option value="11">11 AM</option>
-            <option value="12">12 PM</option>
-            <option value="1">1 PM</option>
-            <option value="2">2 PM</option>
-            <option value="3">3 PM</option>
-            <option value="4">4 PM</option>
-            <option value="5">5 PM</option>
-            <option value="6">6 PM</option>
+            <option value="9 AM">9 AM</option>
+            <option value="10 AM">10 AM</option>
+            <option value="11 AM">11 AM</option>
+            <option value="12 PM">12 PM</option>
+            <option value="1 PM">1 PM</option>
+            <option value="2 PM">2 PM</option>
+            <option value="3 PM">3 PM</option>
+            <option value="4 PM">4 PM</option>
+            <option value="5 PM">5 PM</option>
+            <option value="6 PM">6 PM</option>
           </select>
           <p class="text-danger"><?php if(isset($timeslot)) echo $timeslot; ?>&nbsp;</p>
           <label for="vehicleother"><b>Vehicle (Other)</b></label>

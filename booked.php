@@ -25,7 +25,7 @@
                     $result = $db->query($sql);
                     if ($result->num_rows > 0) {
                         $row = $result->fetch_assoc();
-                        echo "<tr><th>Booking ID</th><td>" . $row["bid"]. "</td></tr><tr><th>Name</th><td>" . $row["mname"]. "</td></tr><tr><th>Phone</th><td>" . $row["phone"]. "</td></tr><tr><th>Email</th><td>" . $row["email"] . "</td></tr><tr><th>Servicing Date</th><td>" . $row["sdate"] . "</td></tr><tr><th>Drop-off Time</th><td>" . $row["dtime"] . " AM/PM</td></tr><tr><th>Vehicle Model</th><td>" . $row["vehicle"] . "</td></tr><tr><th>Vehicle Number</th><td>" . $row["vehiclenum"] . "</td></tr><tr><th>Services Required</th><td>" . $row["services"] . "</td></tr><tr><th>Additional Comments</th><td>" . $row["comments"] . "</td></tr>";
+                        echo "<tr><th>Booking ID</th><td>" . $row["bid"]. "</td></tr><tr><th>Name</th><td>" . $row["mname"]. "</td></tr><tr><th>Phone</th><td>" . $row["phone"]. "</td></tr><tr><th>Email</th><td>" . $row["email"] . "</td></tr><tr><th>Servicing Date</th><td>" . $row["sdate"] . "</td></tr><tr><th>Drop-off Time</th><td>" . $row["dtime"] . "</td></tr><tr><th>Vehicle Model</th><td>" . $row["vehicle"] . "</td></tr><tr><th>Vehicle Number</th><td>" . $row["vehiclenum"] . "</td></tr><tr><th>Services Required</th><td>" . $row["services"] . "</td></tr><tr><th>Additional Comments</th><td>" . $row["comments"] . "</td></tr>";
                     } else {
                         echo "0 results";
                     }
