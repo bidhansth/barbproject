@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2021 at 07:54 AM
+-- Generation Time: Sep 25, 2021 at 09:24 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -46,7 +46,8 @@ CREATE TABLE `archive` (
 
 INSERT INTO `archive` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`) VALUES
 (24, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-22', 9, 'yamaha fz', '12123 ', 'Full Servicing', ''),
-(26, 'Ajit KC', 9843777722, 'azaxkc@gmail.com', '2021-09-22', 4, 'yamaha fz', '123a', 'Full Servicing', '');
+(26, 'Ajit KC', 9843777722, 'azaxkc@gmail.com', '2021-09-22', 4, 'yamaha fz', '123a', 'Full Servicing', ''),
+(29, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', 9, 'Hyundai i10', 'ASD AD', 'Full Servicing', 'SD');
 
 -- --------------------------------------------------------
 
@@ -72,8 +73,8 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`) VALUES
-(29, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', '9 AM', 'Hyundai i10', 'ASD AD', 'Full Servicing', 'SD'),
-(30, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', '5 PM', 'hyundai santa fe', 'ASD AD', 'Full Servicing', 'SD');
+(30, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', '5 PM', 'hyundai santa fe', 'ASD AD', 'Full Servicing', 'SD'),
+(31, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-22', '6 PM', 'Honda Civic', '123 asd a', 'Full Servicing', 'asdas');
 
 -- --------------------------------------------------------
 
@@ -213,7 +214,7 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `employees`

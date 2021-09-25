@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-sm-4 search-box">
           <label for="sdate"><b>Servicing Date</b></label>
-          <input type="date" name="sdate" required>
+          <input type="date" name="sdate" min="<?php echo date("Y-m-d"); ?>" required>
           <p>&nbsp;</p>
           <label for="vehicle"><b>Vehicle</b></label>
           <input type="text" autocomplete="off" placeholder="Search vehicles..." style="margin-bottom: 2px;" name="vehicle">

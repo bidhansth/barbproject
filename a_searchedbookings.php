@@ -25,10 +25,10 @@
   <?php include('includes/adminnavbar.php'); ?>
   <div class="container-fluid">
     <div class="row" style="margin: 15px;">
-      <h3 align="center" style="margin-bottom: 40px;">All Bookings</h3>
+      <h3 align="center" style="margin-bottom: 40px;">Bookings on <?php $searchdate=$_POST['searchdate']; echo $searchdate; ?></h3>
       <table class="table table-striped table-bordered">
         <?php
-          $sql = "SELECT * FROM bookings";
+          $sql = "SELECT * FROM bookings WHERE sdate='$searchdate'";
           $result = $db->query($sql);
 
           if ($result->num_rows > 0) {
