@@ -138,6 +138,11 @@ if (isset($_POST['servicecancelled'])) {
 	mysqli_query($db,"DELETE FROM bookings WHERE bid=$compbid;");
 }
 
+if (isset($_POST['servicestatus'])) {
+	$statusbid=$_POST['statusbid'];
+	mysqli_query($db,"UPDATE bookings SET status='Active' WHERE bid=$statusbid");
+}
+
 // Employee login
 if(isset($_POST['employeelogin'])) {
 	// Data sanitization to prevent SQL injection

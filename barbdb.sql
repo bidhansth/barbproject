@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2021 at 09:24 AM
+-- Generation Time: Sep 28, 2021 at 04:55 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -65,16 +65,18 @@ CREATE TABLE `bookings` (
   `vehicle` varchar(50) NOT NULL,
   `vehiclenum` varchar(15) NOT NULL,
   `services` text NOT NULL,
-  `comments` text NOT NULL
+  `comments` text NOT NULL,
+  `status` varchar(7) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`) VALUES
-(30, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', '5 PM', 'hyundai santa fe', 'ASD AD', 'Full Servicing', 'SD'),
-(31, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-22', '6 PM', 'Honda Civic', '123 asd a', 'Full Servicing', 'asdas');
+INSERT INTO `bookings` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`, `status`) VALUES
+(30, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', '5 PM', 'hyundai santa fe', 'ASD AD', 'Full Servicing', 'SD', 'pending'),
+(31, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-22', '6 PM', 'Honda Civic', '123 asd a', 'Full Servicing', 'asdas', 'pending'),
+(32, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-28', '2 PM', 'Yamaha FZ', '123 ad a', 'Full Servicing', '', 'Active');
 
 -- --------------------------------------------------------
 
@@ -214,7 +216,7 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `employees`
