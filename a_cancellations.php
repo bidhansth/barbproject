@@ -7,7 +7,7 @@
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/barbcss.css" rel="stylesheet">
-  <title>View Bookings</title>
+  <title>View Cancelled Bookings</title>
   <script src="https://kit.fontawesome.com/57c187a429.js" crossorigin="anonymous"></script>
   <?php include('includes/server.php');?>
   <?php include('includes/errors.php');?>
@@ -25,10 +25,10 @@
   <?php include('includes/adminnavbar.php'); ?>
   <div class="container-fluid">
     <div class="row" style="margin: 15px;">
-      <h3 align="center" style="margin-bottom: 40px;">Bookings on <?php $searchdate=$_POST['searchdate']; echo $searchdate; ?></h3>
+      <h3 align="center" style="margin-bottom: 40px;">All Cancelled Bookings</h3>
       <table class="table table-striped table-bordered">
         <?php
-          $sql = "SELECT * FROM archive WHERE sdate='$searchdate'";
+          $sql = "SELECT * FROM cancellations";
           $result = $db->query($sql);
 
           if ($result->num_rows > 0) {
@@ -42,25 +42,6 @@
           }
         ?>
       </table>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="row justify-content-center" style="margin: 15px;">
-      <div class="col-sm-2">
-        Service Completed<br>
-        <form method="post">
-          Booking Id: <input type="text" name="compbid" style="width:40%;"><br>
-          <input type="submit" class="btn barbbutton" name="servicecompleted">
-        </form>
-      </div>
-
-      <div class="col-sm-2">
-        Booking Cancelled<br>
-        <form method="post">
-          Booking Id: <input type="text" name="delbid" style="width:40%;"><br>
-          <input type="submit" class="btn barbbutton" name="servicecancelled">
-        </form>
-      </div>
     </div>
   </div>
 

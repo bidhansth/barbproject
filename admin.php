@@ -56,6 +56,7 @@
 						<a href="a_bookingstoday.php" class="linkb">View Today's Bookings</a><br>
 						<a href="a_bookings.php" class="linkb">View All Bookings</a><br>
 						<a href="a_searchbookings.php" class="linkb">Search Bookings</a><br>
+						<a href="a_cancellations.php" class="linkb">View Cancelled Bookings</a><br>
 						<a href="a_vehicle.php" class="linkb">Add or Delete Vehicle</a><br>
 						<a href="a_employee.php" class="linkb">Add or Delete Employee</a><br>
 					</div>

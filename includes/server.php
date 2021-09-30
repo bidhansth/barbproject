@@ -124,18 +124,19 @@ if (isset($_POST['booking'])) {
 //admin panel code
 if (isset($_POST['servicecompleted'])) {
 	$compbid=$_POST['compbid'];
-   	$retval=mysqli_query($db,"SELECT * FROM bookings WHERE bid='$compbid'");   
+   	$retval=mysqli_query($db,"SELECT * FROM bookings WHERE bid=$compbid");   
    	$row=mysqli_fetch_array($retval, MYSQLI_ASSOC);
     $compmname=$row['mname'];
     $compemail=$row['email'];
-	mysqli_query($db,"INSERT INTO archive SELECT * from bookings where bid=$compbid;");
+	mysqli_query($db,"INSERT INTO archive SELECT * from bookings where bid=$compbid");
 	mysqli_query($db,"DELETE FROM bookings WHERE bid=$compbid;");
 	include('mailer.php');
 }
 
 if (isset($_POST['servicecancelled'])) {
-	$compbid=$_POST['delbid'];
-	mysqli_query($db,"DELETE FROM bookings WHERE bid=$compbid;");
+	$canbid=$_POST['delbid'];
+	mysqli_query($db,"INSERT INTO cancellations SELECT * from bookings where bid=$canbid");
+	mysqli_query($db,"DELETE FROM bookings WHERE bid=$canbid");
 }
 
 if (isset($_POST['servicestatus'])) {

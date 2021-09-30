@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2021 at 04:55 PM
+-- Generation Time: Sep 30, 2021 at 08:14 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -33,21 +33,20 @@ CREATE TABLE `archive` (
   `phone` double NOT NULL,
   `email` varchar(50) NOT NULL,
   `sdate` date NOT NULL,
-  `dtime` tinyint(4) NOT NULL,
+  `dtime` varchar(5) NOT NULL,
   `vehicle` varchar(50) NOT NULL,
   `vehiclenum` varchar(15) NOT NULL,
   `services` text NOT NULL,
-  `comments` text NOT NULL
+  `comments` text NOT NULL,
+  `status` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `archive`
 --
 
-INSERT INTO `archive` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`) VALUES
-(24, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-22', 9, 'yamaha fz', '12123 ', 'Full Servicing', ''),
-(26, 'Ajit KC', 9843777722, 'azaxkc@gmail.com', '2021-09-22', 4, 'yamaha fz', '123a', 'Full Servicing', ''),
-(29, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', 9, 'Hyundai i10', 'ASD AD', 'Full Servicing', 'SD');
+INSERT INTO `archive` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`, `status`) VALUES
+(39, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-29', '10 AM', 'Yamaha FZ', 'Ba 1234', 'Full Servicing', 'lol', 'Active');
 
 -- --------------------------------------------------------
 
@@ -69,14 +68,25 @@ CREATE TABLE `bookings` (
   `status` varchar(7) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `bookings`
+-- Table structure for table `cancellations`
 --
 
-INSERT INTO `bookings` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`, `status`) VALUES
-(30, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-23', '5 PM', 'hyundai santa fe', 'ASD AD', 'Full Servicing', 'SD', 'pending'),
-(31, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-22', '6 PM', 'Honda Civic', '123 asd a', 'Full Servicing', 'asdas', 'pending'),
-(32, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-28', '2 PM', 'Yamaha FZ', '123 ad a', 'Full Servicing', '', 'Active');
+CREATE TABLE `cancellations` (
+  `bid` int(11) NOT NULL,
+  `mname` varchar(50) NOT NULL,
+  `phone` double NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `sdate` date NOT NULL,
+  `dtime` varchar(5) NOT NULL,
+  `vehicle` varchar(50) NOT NULL,
+  `vehiclenum` varchar(15) NOT NULL,
+  `services` text NOT NULL,
+  `comments` text NOT NULL,
+  `status` int(7) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -96,7 +106,7 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`eid`, `ename`, `ephone`, `epassword`) VALUES
-(2, 'Ritika Karanjit', 1234567890, '12345');
+(3, 'Ritika Karanjit', 1234567890, '12345');
 
 -- --------------------------------------------------------
 
@@ -191,6 +201,12 @@ ALTER TABLE `bookings`
   ADD PRIMARY KEY (`bid`);
 
 --
+-- Indexes for table `cancellations`
+--
+ALTER TABLE `cancellations`
+  ADD PRIMARY KEY (`bid`);
+
+--
 -- Indexes for table `employees`
 --
 ALTER TABLE `employees`
@@ -216,13 +232,13 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `members`
