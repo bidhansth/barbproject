@@ -102,10 +102,11 @@ if (isset($_POST['booking'])) {
 	$phone=$_POST['phone'];
 	$email=$_POST['email'];
 	$sdate=$_POST['sdate'];
-	$vehicle=$_POST['vehicle'];
+	$vehicleo=$_POST['vehicle'];
+	$vehicleother=$_POST['vehicleother'];
+	$vehicle=$vehicleo . $vehicleother;
 	$vehiclenum=$_POST['vehiclenum'];
 	$dtime=$_POST['dtime'];
-	$vehicleother=$_POST['vehicleother'];
 	$sreq=$_POST['sreq'];
 	$services=implode(",",$sreq);
 	$comments=$_POST['comments'];

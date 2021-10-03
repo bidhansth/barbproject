@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2021 at 08:14 AM
+-- Generation Time: Oct 03, 2021 at 07:32 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -67,6 +67,15 @@ CREATE TABLE `bookings` (
   `comments` text NOT NULL,
   `status` varchar(7) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`, `status`) VALUES
+(40, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-01', '10 AM', 'Yamaha FZ', '123 asas', 'Full Servicing', 'asda', 'Pending'),
+(41, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-02', '4 PM', '', 'Ba 123123 asdas', 'Basic Servicing', 'asdasd asd', 'Pending'),
+(42, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-02', '1 PM', 'asdasd asdasdas asdasd', '121 asda 123', 'Front Brake', 'asas er1 asd asd', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -232,7 +241,7 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `employees`

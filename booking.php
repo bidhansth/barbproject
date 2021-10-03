@@ -36,14 +36,14 @@
       <div class="row">
         <div class="col-sm-4 search-box">
           <label for="sdate"><b>Servicing Date</b></label>
-          <input type="date" name="sdate" min="<?php echo date("Y-m-d"); ?>" required>
+          <input type="date" name="sdate" min="<?php echo date("Y-m-d"); ?>" value="<?php if(isset($_POST['sdate'])) echo $_POST['sdate'] ?>" required>
           <p>&nbsp;</p>
           <label for="vehicle"><b>Vehicle</b></label>
-          <input type="text" autocomplete="off" placeholder="Search vehicles..." style="margin-bottom: 2px;" name="vehicle">
+          <input type="text" autocomplete="off" placeholder="Search vehicles..." style="margin-bottom: 2px;" name="vehicle" value="<?php if(isset($_POST['vehicle'])) echo $_POST['vehicle'] ?>" >
           <div class="result"></div>
           <br>
           <label for="vehiclenum"><b>Vehicle Number</b></label>
-          <input type="text" name="vehiclenum" placeholder="eg: Ba 69 Pa 4020" required>
+          <input type="text" name="vehiclenum" placeholder="eg: Ba 69 Pa 4020" value="<?php if(isset($_POST['vehiclenum'])) echo $_POST['vehiclenum'] ?>" required>
           <br>
         </div>
         <div class="col-sm-4">
@@ -62,7 +62,7 @@
           </select>
           <p class="text-danger"><?php if(isset($timeslot)) echo $timeslot; ?>&nbsp;</p>
           <label for="vehicleother"><b>Vehicle (Other)</b></label>
-          <input type="text" placeholder="Enter vehicle here if not available on the list" name="vehicleother">
+          <input type="text" placeholder="Enter vehicle here if not available on the list" name="vehicleother" value="<?php if(isset($_POST['vehicleother'])) echo $_POST['vehicleother'] ?>" >
         </div>
       </div>
       <hr>
