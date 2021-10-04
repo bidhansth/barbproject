@@ -33,7 +33,6 @@
 						<button type="submit" class="barbbutton" name="addemployee">Add Employee</button>
 					</div>
 				</form>
-				<a href="admin.php">Back</a>
 			</div>
 			<div class="col-sm-2">
 				&nbsp;

@@ -46,7 +46,7 @@
     </div>
   </div>
   <div class="footer">
-    <div class="row justify-content-center" style="margin: 15px;">
+    <div class="row justify-content-center align-items-end" style="margin: 15px;">
       <div class="col-sm-2">
         Start Service<br>
         <form method="post">
@@ -59,6 +59,7 @@
         Service Completed<br>
         <form method="post">
           Booking Id: <input type="text" name="compbid" style="width:40%;"><br>
+          Additional Comments: <input type="text" name="compcomm"><br>
           <input type="submit" class="btn barbbutton" name="servicecompleted">
         </form>
       </div>

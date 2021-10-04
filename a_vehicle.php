@@ -29,7 +29,6 @@
 						<button type="submit" class="barbbutton" name="addvehicle">Add Vehicle</button>
 					</div>
 				</form>
-				<a href="admin.php">Back</a>
 			</div>
 			<div class="col-sm-2">
 				&nbsp;

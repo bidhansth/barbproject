@@ -21,7 +21,8 @@
             Your Booking Details:<br></p>
             <table class="table table-striped table-bordered table-sm" style="width:90%;">
                 <?php
-                    $sql = "SELECT * FROM bookings ORDER BY bid desc limit 1";
+                    $phone=$_SESSION['phone'];
+                    $sql = "SELECT * FROM bookings WHERE phone='$phone' ORDER BY bid desc limit 1";
                     $result = $db->query($sql);
                     if ($result->num_rows > 0) {
                         $row = $result->fetch_assoc();

@@ -29,6 +29,7 @@
             ?>
             <li><a href="members.php">My Bookings</a></li>
             <li><a><i class="far fa-user"></i>&nbsp;<?php echo $_SESSION['mname']; ?></a></li>
+            <li><a href="index.php?logout=1"><i class="fas fa-sign-out-alt"></i></a></li>
             <?php
           }
         ?>
