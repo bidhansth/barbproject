@@ -44,26 +44,6 @@
       </table>
     </div>
   </div>
-  <div class="footer">
-    <div class="row justify-content-center" style="margin: 15px;">
-      <div class="col-sm-2">
-        Service Completed<br>
-        <form method="post">
-          Booking Id: <input type="text" name="compbid" style="width:40%;"><br>
-          <input type="submit" class="btn barbbutton" name="servicecompleted">
-        </form>
-      </div>
-
-      <div class="col-sm-2">
-        Booking Cancelled<br>
-        <form method="post">
-          Booking Id: <input type="text" name="delbid" style="width:40%;"><br>
-          <input type="submit" class="btn barbbutton" name="servicecancelled">
-        </form>
-      </div>
-    </div>
-  </div>
-
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>

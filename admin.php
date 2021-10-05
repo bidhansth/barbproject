@@ -55,14 +55,14 @@
 						<p class="hdr">Admin Panel</p>
 						<a href="a_bookingstoday.php" class="linkb">View Today's Bookings</a><br>
 						<a href="a_bookings.php" class="linkb">View All Bookings</a><br>
-						<a href="a_searchbookings.php" class="linkb">Search Bookings</a><br>
+						<a href="a_searchbookings.php" class="linkb">Search Completed Bookings</a><br>
 						<a href="a_cancellations.php" class="linkb">View Cancelled Bookings</a><br>
 						<a href="a_vehicle.php" class="linkb">Add or Delete Vehicle</a><br>
 						<a href="a_employee.php" class="linkb">Add or Delete Employee</a><br>
 					</div>
 					<?php
 				}
-				if(!isset($_SESSION['ename'])){
+				if(!isset($_SESSION['ename']) AND !isset($_SESSION['mname'])){
 					?>
 					<div class="col-sm-3">
 						<h3>Employee Log In</h3><br>
@@ -78,7 +78,10 @@
 					</div>
 					<?php
 					}
-			?>
+					if(isset($_SESSION['mname'])){
+						echo 'Logged in as customer.';
+					}
+					?>
 		</div>
 	</div>
 

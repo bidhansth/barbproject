@@ -21,7 +21,7 @@
         <form action="a_searchedbookings.php" method="post">
           Enter date to search:
           <input type="date" name="searchdate">
-          <input type="submit" name="searchbookings">
+          <input type="submit" class="barbbutton" name="searchbookings">
         </form>
       </div>
     </div>

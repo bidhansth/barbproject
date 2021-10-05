@@ -54,10 +54,10 @@
           $result = $db->query($sql);
 
           if ($result->num_rows > 0) {
-              echo "<tr><th>Booking ID</th><th>Name</th><th>Servicing Date</th><th>Drop-off Time</th><th>Vehicle</th><th>Vehicle Number</th><th>Services Required</th><th>Comments</th><th>Status</th></tr>";
+              echo "<tr><th>Booking ID</th><th>Name</th><th>Servicing Date</th><th>Drop-off Time</th><th>Vehicle</th><th>Vehicle Number</th><th>Services Required</th><th>Comments</th><th>Status</th><th>Actions</th></tr>";
               // output data of each row
               while($row = $result->fetch_assoc()) {
-                  echo "<tr><td>" . $row["bid"]. "</td><td>" . $row["mname"]. "</td><td>" . $row["sdate"] . "</td><td>" . $row["dtime"] . "</td><td>" . $row["vehicle"] . "</td><td>" . $row["vehiclenum"] . "</td><td>" . $row["services"] . "</td><td>" . $row["comments"] . "</td><td>" . $row["status"] .  "</td></tr>";
+                  echo "<tr><td>" . $row["bid"]. "</td><td>" . $row["mname"]. "</td><td>" . $row["sdate"] . "</td><td>" . $row["dtime"] . "</td><td>" . $row["vehicle"] . "</td><td>" . $row["vehiclenum"] . "</td><td>" . $row["services"] . "</td><td>" . $row["comments"] . "</td><td>" . $row["status"] .  "</td><td><a href=\"members.php?usercancel=" . $row['bid'] . "\">Cancel</a></td></tr>";
               }
           } else {
               echo "0 results";
@@ -69,17 +69,10 @@
 
   <div class="footer">
     <div class="row justify-content-center align-items-end">
-    <div class="col-sm-2">
+      <div class="col-sm-2">
         <a href="booking.php" class="btn barbbutton">Make A Booking</a>
       </div>
-      <div class="col-sm-2">
-        <form method="post">
-          Enter booking id to cancel:<input type="text" name="ucbid" style="width: 50%">
-          <input type="submit" class="btn barbbutton" name="usercancel" value="Cancel A Booking">
-        </form>
-      </div>
     </div>
-  </div>
   </div>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

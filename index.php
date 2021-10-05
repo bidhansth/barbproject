@@ -65,10 +65,13 @@
           <a href="booking.php"><button style="margin: 5px">Make a Booking</button></a>
           <?php
         }
-        if(!isset($_SESSION['mname'])){
+        if(!isset($_SESSION['mname']) AND !isset($_SESSION['ename'])){
           ?>
               <a href="login.php"><button style="margin: 5px">Login / Register</button></a>
               <?php
+        }
+        if(isset($_SESSION['ename'])){
+          echo 'Logged in as Employee';
         }
       ?>
     </div>

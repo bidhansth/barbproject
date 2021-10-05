@@ -37,19 +37,22 @@
 				<div class="header">
 					<h2>Delete Vehicle</h2>
 				</div>
-				<form method="POST">
-					<div class="input-group">
-						<label>Vehicle Make</label>
-						<input type="text" name="vmake">
-					</div>
-					<div class="input-group">
-						<label>Vehicle Model</label>
-						<input type="text" name="vmodel">
-					</div>
-					<div class="input-group">
-						<button type="submit" class="barbbutton" name="deletevehicle">Delete Vehicle</button>
-					</div>
-				</form>
+				<table class="table table-striped table-bordered table-sm">
+        <?php
+          $sql = "SELECT * FROM vehicles ORDER BY vmake";
+          $result = $db->query($sql);
+
+          if ($result->num_rows > 0) {
+              echo "<tr><th>Make</th><th>Model</th><th>Actions</th></tr>";
+              // output data of each row
+              while($row = $result->fetch_assoc()) {
+                  echo "<tr><td>" . $row["vmake"]. "</td><td>" . $row["vmodel"]. "</td><td><a href=\"a_vehicle.php?delvmake=" . $row['vmake'] . "&delvmodel=" .$row['vmodel'] . "\">Delete</a></td></tr>";
+              }
+          } else {
+              echo "0 results";
+          }
+        ?>
+      </table>
 			</div>
 		</div>
 	</div>

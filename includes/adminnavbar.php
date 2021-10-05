@@ -10,14 +10,23 @@
           <a class="nav-link active" href="admin.php">Home</a>
         </li>
         <li class="nav-item dropdown">
-          <?php if(!isset($_SESSION['ename'])) : ?>
-            <a class="nav-link active hvr-underline" onclick="document.getElementById('id01').style.display='block'" style="cursor: pointer;">LOG IN</a>
-          <?php else : ?>
+          <?php 
+            if(!isset($_SESSION['ename']) AND !isset($_SESSION['mname'])){
+              ?>
+              <a class="nav-link active hvr-underline" onclick="document.getElementById('id01').style.display='block'" style="cursor: pointer;">LOG IN</a>
+              <?php 
+              }
+          ?>
+          <?php 
+            if(isset($_SESSION['ename'])){
+              ?>
               <a class="nav-link active dropdown-toggle hvr-underline" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-user"></i>&nbsp;<?php echo $_SESSION['ename']; ?></a>
               <ul class="dropdown-menu" style="left: 30px;" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="admin.php?logout=1" style="color: red;font-weight:600;">LOG OUT</a></li>
               </ul>
-          <?php endif ?>
+              <?php
+              }
+          ?>
         </li>
       </ul>
     </div>

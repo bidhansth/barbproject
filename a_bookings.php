@@ -13,7 +13,6 @@
   <?php include('includes/errors.php');?>
   <style>
   .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -32,10 +31,10 @@
           $result = $db->query($sql);
 
           if ($result->num_rows > 0) {
-              echo "<tr><th>Booking ID</th><th>Name</th><th>Phone</th><th>Email</th><th>Servicing Date</th><th>Drop-off Time</th><th>Vehicle</th><th>Vehicle Number</th><th>Services Required</th><th>Comments</th><th>Status</th></tr>";
+              echo "<tr><th>Booking ID</th><th>Name</th><th>Phone</th><th>Email</th><th>Servicing Date</th><th>Drop-off Time</th><th>Vehicle</th><th>Vehicle Number</th><th>Services Required</th><th>Comments</th><th>Status</th><th colspan=3>Actions</th></tr>";
               // output data of each row
               while($row = $result->fetch_assoc()) {
-                  echo "<tr><td>" . $row["bid"]. "</td><td>" . $row["mname"]. "</td><td>" . $row["phone"]. "</td><td>" . $row["email"] . "</td><td>" . $row["sdate"] . "</td><td>" . $row["dtime"] . "</td><td>" . $row["vehicle"] . "</td><td>" . $row["vehiclenum"] . "</td><td>" . $row["services"] . "</td><td>" . $row["comments"] . "</td><td>" . $row["status"] . "</td></tr>";
+                  echo "<tr><td>" . $row["bid"]. "</td><td>" . $row["mname"]. "</td><td>" . $row["phone"]. "</td><td>" . $row["email"] . "</td><td>" . $row["sdate"] . "</td><td>" . $row["dtime"] . "</td><td>" . $row["vehicle"] . "</td><td>" . $row["vehiclenum"] . "</td><td>" . $row["services"] . "</td><td>" . $row["comments"] . "</td><td>" . $row["status"] . "</td><td><a href=\"a_bookingstoday.php?servicestatus=" . $row['bid'] . "\">Start</a></td><td><a href=\"a_bookingstoday.php?servicecompleted=" . $row['bid'] . "\">Complete</a></td><td><a href=\"a_bookingstoday.php?servicecancelled=" . $row['bid'] . "\">Cancel</a></td></tr>";
               }
           } else {
               echo "0 results";
@@ -44,26 +43,18 @@
       </table>
     </div>
   </div>
-  <div class="footer">
-    <div class="row justify-content-center" style="margin: 15px;">
+  <!--div class="footer">
+    <div class="row justify-content-center align-items-end" style="margin: 15px;">
       <div class="col-sm-2">
         Service Completed<br>
         <form method="post">
           Booking Id: <input type="text" name="compbid" style="width:40%;"><br>
+          Additional Comments: <input type="text" name="compcomm"><br>
           <input type="submit" class="btn barbbutton" name="servicecompleted">
         </form>
       </div>
-
-      <div class="col-sm-2">
-        Booking Cancelled<br>
-        <form method="post">
-          Booking Id: <input type="text" name="delbid" style="width:40%;"><br>
-          <input type="submit" class="btn barbbutton" name="servicecancelled">
-        </form>
-      </div>
     </div>
-  </div>
-
+  </div-->
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
