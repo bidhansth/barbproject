@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2021 at 03:04 PM
+-- Generation Time: Oct 06, 2021 at 11:34 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -46,14 +46,8 @@ CREATE TABLE `archive` (
 --
 
 INSERT INTO `archive` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`, `status`) VALUES
-(39, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-09-29', '10 AM', 'Yamaha FZ', 'Ba 1234', 'Full Servicing', 'lol', 'Active'),
-(43, 'Ajit KC', 9843777722, 'azaxkc@gmail.com', '2021-10-04', '9 AM', 'Yamaha FZ', '123a sdas ', 'Full Servicing', 'asdasdas, ', 'Pending'),
-(44, 'Ajit KC', 9843777722, 'azaxkc@gmail.com', '2021-10-03', '9 AM', 'Husqvarna Svartpilen', '12e asdas', 'Full Servicing', 'asd 12', 'Active'),
-(45, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-03', '10 AM', 'Hyundai i20', '123 asda ', 'Full Servicing', 'asd 123 asd 12asd lol', 'Pending'),
-(46, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-03', '12 PM', 'Hero Splendor', '123 asd asas1', 'Basic Servicing', 'aaaaaaaaaabbbbbbb', 'Pending'),
-(47, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-03', '1 PM', 'Bajaj Pulsar', '123 asd asas111', 'Basic Servicing', 'aaaaaaaaaab, headlight replacement', 'Active'),
-(49, 'Bibesh Paudel', 9867649508, 'bibesh03@gmail.com', '2021-10-04', '1 PM', 'TVS Apache', 'Ba 1 Kha 1990', 'Full Servicing', 'sidelight broken, ', 'Active'),
-(51, 'Birendra Bista', 1234567890, 'birendra.bista@ncit.edu.np', '2021-10-04', '12 PM', 'Honda Civic', 'Ba 12 Kha 1221', 'Basic Servicing,Full Wash', ', ', 'Active');
+(55, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-04', '9 AM', 'Yamaha FZ', 'Ba 1 Gha 4037', 'Full Servicing,Rear Brake,Half Wash', 'left sidelight problem', 'Pending'),
+(57, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-05', '9 AM', 'Husqvarna Svartpilen', 'asd 123 asd', 'Full Servicing', '', 'Active');
 
 -- --------------------------------------------------------
 
@@ -74,13 +68,6 @@ CREATE TABLE `bookings` (
   `comments` text NOT NULL,
   `status` varchar(7) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `bookings`
---
-
-INSERT INTO `bookings` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`, `status`) VALUES
-(50, 'Ajit KC', 9843777722, 'azaxkc@gmail.com', '2021-10-06', '9 AM', 'Hyundai i10', 'Ba 14 Cha 1294', 'Basic Servicing,Front Brake,Half Wash', 'back light broken', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -107,7 +94,7 @@ CREATE TABLE `cancellations` (
 --
 
 INSERT INTO `cancellations` (`bid`, `mname`, `phone`, `email`, `sdate`, `dtime`, `vehicle`, `vehiclenum`, `services`, `comments`, `status`) VALUES
-(48, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-04', '4 PM', 'Yamaha FZ', '123 asd 123 ', 'Full Servicing', '123213 asdad', 0);
+(56, 'Bidhan Shrestha', 9808946761, 'bidhan.sth1@gmail.com', '2021-10-05', '10 AM', 'TVS Apache', 'A1 123a hba', 'Full Servicing', '', 0);
 
 -- --------------------------------------------------------
 
@@ -150,10 +137,7 @@ CREATE TABLE `members` (
 
 INSERT INTO `members` (`mid`, `mname`, `email`, `phone`, `password`) VALUES
 (17, 'Bidhan Shrestha', 'bidhan.sth1@gmail.com', 9808946761, '827ccb0eea8a706c4c34a16891f84e7b'),
-(19, 'Ajit KC', 'azaxkc@gmail.com', 9843777722, '827ccb0eea8a706c4c34a16891f84e7b'),
-(20, 'Bibesh Paudel', 'bibesh03@gmail.com', 9867649508, '827ccb0eea8a706c4c34a16891f84e7b'),
-(21, '123', '1@2.com', 0, '827ccb0eea8a706c4c34a16891f84e7b'),
-(22, 'Birendra Bista', 'birendra.bista@ncit.edu.np', 1234567890, '827ccb0eea8a706c4c34a16891f84e7b');
+(19, 'Ajit KC', 'azaxkc@gmail.com', 9843777722, '827ccb0eea8a706c4c34a16891f84e7b');
 
 -- --------------------------------------------------------
 
@@ -189,7 +173,6 @@ INSERT INTO `vehicles` (`vid`, `vmake`, `vmodel`) VALUES
 (25, 'Tesla', 'Model 3'),
 (26, 'Tesla', 'Model Y'),
 (27, 'Land Rover', 'Discovery'),
-(28, 'Land Rover', 'Evoke'),
 (29, 'Suzuki', 'Gypsy'),
 (30, 'Bajaj', 'Pulsar'),
 (31, 'Hero', 'Splendor'),
@@ -207,8 +190,7 @@ INSERT INTO `vehicles` (`vid`, `vmake`, `vmodel`) VALUES
 (43, 'Vespa', 'SXL'),
 (44, 'Vespa', 'VXL'),
 (45, 'Honda', 'Dio'),
-(46, 'Honda', 'Grazia'),
-(47, 'Honda', 'abc');
+(46, 'Honda', 'Grazia');
 
 --
 -- Indexes for dumped tables
@@ -258,13 +240,13 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `bid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `members`
